@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama-webui
+  labels:
+    app: ollama-webui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ollama-webui
+  template:
+    metadata:
+      labels:
+        app: ollama-webui
+    spec:
+      containers:
+        - name: ollama-webui
+          image: ghcr.io/ollama-webui/ollama-webui:main
+          env:
+            - name: OLLAMA_API_BASE_URL
+              value: http://ollama-svc:11434
+          ports:
+            - name: http
+              containerPort: 8080
+#value: http://ollama-svc.codellama.svc.cluster.local:80/api
