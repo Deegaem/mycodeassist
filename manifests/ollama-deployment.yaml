@@ -17,17 +17,17 @@ spec:
         image: ollama/ollama:latest
         resources:
           requests:
-            memory: "4Gi"
-            cpu: "2000m"
-          limits:
             memory: "6Gi"
-            cpu: "4000m"
+            cpu: "1"
+          limits:
+            memory: "10Gi"
+            cpu: "2"
         ports:
         - containerPort: 11434
-        volumeMounts:
-        - name: ollama-data
-          mountPath: /root/.ollama
-      volumes:
-      - name: ollama-data
-        persistentVolumeClaim:
-          claimName: csi-s3-pvc
+      #   volumeMounts:
+      #   - name: ollama-data
+      #     mountPath: /root/.ollama
+      # volumes:
+      # - name: ollama-data
+      #   persistentVolumeClaim:
+      #     claimName: csi-s3-pvc

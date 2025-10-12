@@ -13,7 +13,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ollama-svc
+                name: ollama-webui-svc
                 port:
-                  number: 11434
+                  number: 8080
   ingressClassName: nginx
