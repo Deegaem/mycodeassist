@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ollama-cert
+  namespace: ollama
+spec:
+  dnsNames:
+    - www.my-code-chat-bot.ch
+  secretName: letsencrypt-nginx-private-key
+  issuerRef:
+    name: letsencrypt-nginx
+    kind: Issuer
