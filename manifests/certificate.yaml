@@ -5,7 +5,7 @@ metadata:
   namespace: ollama
 spec:
   dnsNames:
-    - www.my-code-chat-bot.ch
+    - my-code-chat-bot.ch
   secretName: letsencrypt-nginx-private-key
   issuerRef:
     name: letsencrypt-nginx
