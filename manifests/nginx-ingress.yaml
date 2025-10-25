@@ -4,13 +4,13 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: ollama
-  # annotations:
-  #   cert-manager.io/issuer: letsencrypt-nginx
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
 spec:
-  # tls:
-  # - hosts:
-  #   - www.my-code-chat-bot.ch
-  #   secretName: letsencrypt-nginx
+  tls:
+  - hosts:
+    - www.my-code-chat-bot.ch
+    secretName: letsencrypt-nginx-private-key
   rules:
     - host: my-code-chat-bot.ch
       http:
