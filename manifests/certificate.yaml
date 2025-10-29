@@ -9,4 +9,4 @@ spec:
   secretName: letsencrypt-nginx-private-key
   issuerRef:
     name: letsencrypt-nginx
-    kind: Issuer
+    kind: ClusterIssuer
