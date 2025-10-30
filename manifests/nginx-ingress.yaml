@@ -12,8 +12,8 @@ spec:
     - www.my-code-chat-bot.ch
     secretName: letsencrypt-nginx-private-key
   - hosts:
-    - www.my-code-chat-bot.ch
-    secretName: letsencrypt-nginx-private-key
+    - www.argocd.my-code-chat-bot.ch
+    secretName: letsencrypt-nginx-private-key2
 # # kubectl get secret -n ollama and use here the one with type kubernetes.io/tls
   rules:
     - host: www.my-code-chat-bot.ch
@@ -26,7 +26,7 @@ spec:
                 name: ollama-webui-svc
                 port:
                   number: 8080
-    - host: www.my-code-chat-bot.ch
+    - host: www.argocd.my-code-chat-bot.ch
       http:
         paths:
           - path: /
