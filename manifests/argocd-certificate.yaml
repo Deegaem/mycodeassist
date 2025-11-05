@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: ollama-cert2
+  name: argocd-cert
   namespace: ollama
 spec:
   dnsNames:
     - argocd.my-code-chat-bot.ch
-  secretName: letsencrypt-nginx-private-key2
+  secretName: letsencrypt-nginx-argocd-private-key
   issuerRef:
     name: letsencrypt-nginx
     kind: ClusterIssuer

@@ -8,7 +8,7 @@ spec:
     email: sadig@gmx.ch
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-nginx
+      name: letsencrypt-nginx-private-key
     solvers:
       - http01:
           ingress:
