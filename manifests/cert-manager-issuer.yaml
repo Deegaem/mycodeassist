@@ -1,8 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-nginx
-  namespace: ollama
+  name: letsencrypt-production
 spec:
   acme:
     email: sadig@gmx.ch

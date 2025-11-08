@@ -6,7 +6,7 @@ metadata:
 spec:
   dnsNames:
     - my-code-chat-bot.ch
-  secretName: letsencrypt-nginx-private-key
+  secretName: letsencrypt-tls
   issuerRef:
-    name: letsencrypt-nginx
+    name: letsencrypt-production
     kind: ClusterIssuer
