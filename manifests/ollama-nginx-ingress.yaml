@@ -4,20 +4,20 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: ollama
-  annotations:
+  # annotations:
     # cert-manager.io/cluster-issuer: letsencrypt-production
     # kubernetes.io/tls-acme: 'true'
-    nginx.ingress.kubernetes.io/ssl-passthrough: 'true'
-    nginx.ingress.kubernetes.io/force-ssl-redirect: 'false'
-    nginx.ingress.kubernetes.io/backend-protocol: 'HTTPS'
+    # nginx.ingress.kubernetes.io/ssl-passthrough: 'true'
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: 'false'
+    # nginx.ingress.kubernetes.io/backend-protocol: 'HTTPS'
 spec:
-  tls:
-  - hosts:
-    - my-code-chat-bot.ch
-    secretName: letsencrypt-tls
+  # tls:
+  # - hosts:
+  #   - argocd.my-code-chat-bot.ch
+  #   secretName: letsencrypt-tls
 # # kubectl get secret -n ollama and use here the one with type kubernetes.io/tls
   rules:
-    - host: my-code-chat-bot.ch
+    - host: argocd.my-code-chat-bot.ch
       http:
         paths:
           - path: /

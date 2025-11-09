@@ -8,12 +8,9 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
-  tls:
-  - hosts:
-    - my-code-chat-bot.ch
-    secretName: letsencrypt-tls
+  ingressClassName: nginx
   rules:
-  - host: my-code-chat-bot.ch
+  - host: www.my-code-chat-bot.ch
     http:
       paths:
       - path: /
@@ -23,4 +20,3 @@ spec:
             name: argocd-server
             port:
               name: https
-  ingressClassName: nginx
