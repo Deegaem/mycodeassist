@@ -4,13 +4,18 @@ metadata:
   name: argocd-server
   namespace: argocd
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-nginx
     alb.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
+  tls:
+  - hosts:
+    - argocd.my-code-chat-bot.ch
+    secretName: letsencrypt-tls
   ingressClassName: nginx
   rules:
-  - host: www.my-code-chat-bot.ch
+  - host: argocd.my-code-chat-bot.ch
     http:
       paths:
       - path: /
