@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   dnsNames:
-    - argocd.my-code-chat-bot.ch
-  secretName: letsencrypt-tls
+    - argocd.coding-assistant.ch
+  secretName: argocd-letsencrypt-tls
   issuerRef:
     name: letsencrypt-nginx
-    kind: Issuer
+    kind: ClusterIssuer

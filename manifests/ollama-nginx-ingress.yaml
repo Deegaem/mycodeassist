@@ -1,41 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-# metadata:
-#   name: nginx-ingress
-#   namespace: ollama
-#   annotations:
-#     cert-manager.io/cluster-issuer: "letsencrypt-nginx"
-#     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-# spec:
-#   tls:
-#   - hosts:
-#     - my-code-chat-bot.ch
-#     secretName: letsencrypt-tls
-#   ingressClassName: nginx
-#   rules:
-#     - host: my-code-chat-bot.ch
-#       http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: ollama-webui-svc
-#                 port:
-#                   number: 8080
-  
 metadata:
-  name: nginx-ingress
+  name: ollama-nginx-ingress
   namespace: ollama
   annotations:
-    cert-manager.io/issuer: letsencrypt-nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-nginx"
 spec:
   tls:
   - hosts:
-    - www.my-code-chat-bot.ch
-    secretName: letsencrypt-nginx-private-key
+    - www.coding-assistant.ch
+    secretName: ollama-letsencrypt-tls
+  ingressClassName: nginx
   rules:
-    - host: www.my-code-chat-bot.ch
+    - host: www.coding-assistant.ch
       http:
         paths:
           - path: /
@@ -45,5 +22,6 @@ spec:
                 name: ollama-webui-svc
                 port:
                   number: 8080
-  ingressClassName: nginx
+  
+
  
