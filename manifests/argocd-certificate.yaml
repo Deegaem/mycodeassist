@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   dnsNames:
-    - argocd.coding-assistant.ch
+    - www.argocd.coding-assistant.ch
   secretName: argocd-letsencrypt-tls
   issuerRef:
     name: letsencrypt-nginx
