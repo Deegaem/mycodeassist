@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cmd-params-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cmd-params-cm
+  namespace: argocd
+  resourceVersion: "6782"
+  uid: c1f44241-03bf-41fa-b81f-1710d04b04ec
+data:
+  server.insecure: "true"
