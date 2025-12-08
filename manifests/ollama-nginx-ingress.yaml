@@ -4,12 +4,12 @@ metadata:
   name: ollama-nginx-ingress
   namespace: ollama
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-nginx0"
 spec:
   tls:
   - hosts:
     - www.coding-assistant.ch
-    secretName: ollama-letsencrypt-tls
+    secretName: ollama-letsencrypt-tls0
   ingressClassName: nginx
   rules:
     - host: www.coding-assistant.ch

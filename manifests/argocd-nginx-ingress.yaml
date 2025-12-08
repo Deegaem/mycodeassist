@@ -22,7 +22,7 @@ spec:
   tls:
   - hosts:
     - argocd.coding-assistant.ch
-    secretName: argocd-letsencrypt-tls
+    secretName: argocd-letsencrypt-tls0
 
 
 

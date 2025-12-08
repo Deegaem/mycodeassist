@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: ollama-cert
+  name: ollama-cert0
   namespace: ollama
 spec:
   dnsNames:
     - www.coding-assistant.ch
-  secretName: ollama-letsencrypt-tls
+  secretName: ollama-letsencrypt-tls0
   issuerRef:
-    name: letsencrypt-nginx
+    name: letsencrypt-nginx0
     kind: ClusterIssuer

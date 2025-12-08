@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: argocd-cert
+  name: argocd-cert0
   namespace: argocd
 spec:
   dnsNames:
     - argocd.coding-assistant.ch
-  secretName: argocd-letsencrypt-tls
+  secretName: argocd-letsencrypt-tls0
   issuerRef:
-    name: letsencrypt-nginx
+    name: letsencrypt-nginx0
     kind: ClusterIssuer
